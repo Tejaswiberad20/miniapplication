@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+            height: 100vh;
+        }
+        .head{
+            text-align: center;
+            color: #fff;
+        }
+        .container{
+            margin-top: 50px;
+            height: 300px;
+            width: 500px;
+            background-color: #fff;
+            display: block;
+            margin: 50px auto;
+            padding: 20px 30px;
+            border-radius: 50px 5px 50px 5px;
+            box-shadow: 0px 3px 50px #FC00FF;
+        }
+        .number-input{
+            display: block;
+            width: 60%;
+            margin: 10px auto ;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+        .calulate{
+            display: inline;
+            padding: 5px 10px;
+            width: 200px;
+            font-size: 24px;
+            margin: 30px;
+            background-color: #FC00FF;
+            color:  #00ffff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 0 5px 1px  #00ffff;
+        }
+        .Answer{
+            text-align: center;
+            margin: 20px auto;
+            font-size: 29px;
+        }
+        .reset{
+            display: inline;
+            padding: 5px 10px;
+            width: 200px;
+            font-size: 24px;
+            margin: 10px auto;
+            background-color: #00ffff;
+            color: #FC00FF;
+            border: none;
+            box-shadow: 0 0 5px 1px  #FC00FF;
+            border-radius: 50px;
+        }
+        @media screen and (max-width:395px){
+            .container{
+                width: 90%;
+            }
+           .calulate {
+                width: 50%;
+                margin: 10px auto;
+
+                font-size: 16px;
+
+            }
+        }
+        </style>
+    <title>sumOfTwoNo</title>
+</head>
+<body>
+    <h1 class="head">Sum Of Two Number</h1>
+    <div class="container">
+        <form>
+            
+            <input type="text"placeholder="NumberOne"class="number-input"id="num1">
+       
+            <input type="text"placeholder="NumberTwo"class="number-input"id="num2">
+            <p class="Answer"id="Answer">Answer:</p>
+            <button type="button" class="calulate" onclick="calculate()">Calculate</button>
+            <button type="button" class=" calulate reset" onclick="reset()">Reset</button>
+
+        </form>
+    </div>
+    <script>
+        function calculate(){
+            const input1 = document.getElementById("num1");
+
+            const input2 = document.getElementById("num2");
+
+            const ansElement=document.getElementById("Answer");
+
+
+            const sum = parseInt(input1.value) + parseInt(input2.value);
+
+
+            ansElement.innerText=`Answer:${sum}`;
+        }
+        function reset(){
+            const input1 = document.getElementById("num1");
+
+            const input2 = document.getElementById("num2");
+
+            const ansElement=document.getElementById("Answer");
+
+
+            input1.value="";
+
+            input2.value="";
+
+        }
+    </script>
+</body>
+</html>
